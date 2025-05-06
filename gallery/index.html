@@ -2,12 +2,20 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-  <link href="./css/thumbnail-gallery.css" rel="stylesheet" />
 
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
     .tz-gallery {
       padding: 40px;
     }
@@ -20,119 +28,90 @@
       border: none;
       transition: 0.15s ease-in-out;
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+      width: 100%;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
     .tz-gallery .thumbnail:hover {
       transform: translateY(-10px) scale(1.02);
     }
 
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+
     .baguetteBox-button {
       background-color: transparent !important;
     }
-
-
-    .carousel-inner>.item>a>img,
-    .carousel-inner>.item>img,
-    .img-responsive,
-    .thumbnail a>img,
-    .thumbnail>img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-.thumbnail {
-  width: 100%;
-  height: 400px; /* или auto, если не нужен фиксированный размер */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-  
   </style>
-
 </head>
 
 <body>
-
-
   <main>
-
-
     <section id="gallery">
-      <div class=" gallery-container container">
+      <div class="gallery-container container">
         <div class="tz-gallery">
-
           <div class="row">
 
-            <!---------------------------------------------->
-            <div data-aos="flip-up" class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="1.jpeg">
-                  <img src="1.jpeg">
+                  <img src="1.jpeg" alt="Image 1">
                 </a>
               </div>
             </div>
 
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="20" class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="2.jpg">
-                  <img src="2.jpg">
+                  <img src="2.jpg" alt="Image 2">
                 </a>
               </div>
             </div>
-            <!---------------------------------------------->
 
-            <div data-aos="flip-up" data-aos-delay="40" class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="3.webp">
-                  <img src="3.webp">
+                  <img src="3.webp" alt="Image 3">
                 </a>
-
               </div>
             </div>
-            <!---------------------------------------------->
 
-            <div data-aos="flip-up" data-aos-delay="60" class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="41.png">
-                  <img src="41.png">
+                  <img src="41.png" alt="Image 4">
                 </a>
               </div>
             </div>
-			
-			<!---------------------------------------------->
-            <div data-aos="flip-up" class="col-sm-6 col-md-4">
+
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="5.jpg">
-                  <img src="5.jpg">
+                  <img src="5.jpg" alt="Image 5">
                 </a>
               </div>
             </div>
-
-
 
           </div>
         </div>
       </div>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-      <script>
-        baguetteBox.run('.tz-gallery');
-      </script>
-
     </section>
-
-
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+  <script>
+    baguetteBox.run('.tz-gallery');
+  </script>
+</body>
 
 </html>
